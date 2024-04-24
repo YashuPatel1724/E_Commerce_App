@@ -17,10 +17,10 @@ class _CartScreenState extends State<CartScreen> {
     deliveryfee=500;
     dicount=250;
     for (int i = 0; i < cartList.length; i++) {
-      subtotal = (subtotal + cartList[i]['price']).toInt();
-      total = (subtotal+deliveryfee-dicount).toInt();
+      qty = (qty + cartList[i]['qty']).toInt();
+      subtotal = (subtotal + cartList[i]['price']*cartList[i]['qty']).toInt();
     }
-
+    total = (subtotal+deliveryfee-dicount).toInt();
     super.initState();
   }
 
@@ -183,18 +183,6 @@ class _CartScreenState extends State<CartScreen> {
                                               total = (subtotal-deliveryfee-dicount).toInt();
                                             }
                                             total = (subtotal+deliveryfee-dicount).toInt();
-
-
-                                            // if(cartList.length==1)
-                                            // {
-                                            //   setState(() {
-                                            //     dicount=0;
-                                            //     deliveryfee=0;
-                                            //     total=0;
-                                            //     subtotal=0;
-                                            //   });
-                                            // }
-
                                           });
 
                                         },
@@ -417,6 +405,8 @@ int total = 0;
 int subtotal = 0;
 int dicount = 500;
 int deliveryfee = 250;
+int qty = 0;
+
 
 
 // Container(

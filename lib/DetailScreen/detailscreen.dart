@@ -204,7 +204,24 @@ class _CartScreenState extends State<DetailScreen> {
                         child: InkWell(
                           onTap: () {
                             setState(() {
-                              cartList.add(productList[selectionIndex]);
+                              bool status = false;
+                              int index = 0;
+                              for(int i=0; i<cartList.length; i++)
+                                {
+                                  if(cartList[i]['name']==productList[selectionIndex]['name'])
+                                    {
+                                      index = i;
+                                      status = true;
+                                    }
+                                }
+                              if(status)
+                                {
+                                  cartList[index]['qty']++;
+                                }
+                              else
+                                {
+                                  cartList.add(productList[selectionIndex]);
+                                }
                             });
                             Navigator.of(context).pushNamed('/cart');
                           },
@@ -264,3 +281,5 @@ List colorList = [
   Colors.purpleAccent,
   Colors.brown,
 ];
+
+
