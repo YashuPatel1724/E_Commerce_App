@@ -419,10 +419,5 @@ int qty = 0;
 //   alignment: Alignment.center,
 //   child: Text('Total : Rs. ${total}',style: TextStyle(color: Colors.white,fontSize: 25),),
 // ),
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
 
