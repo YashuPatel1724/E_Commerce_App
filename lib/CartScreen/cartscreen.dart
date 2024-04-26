@@ -17,7 +17,7 @@ class _CartScreenState extends State<CartScreen> {
     deliveryfee=500;
     dicount=250;
     for (int i = 0; i < cartList.length; i++) {
-      qty = (qty + cartList[i]['qty']).toInt();
+      // qty = (qty + cartList[i]['qty']).toInt();
       subtotal = (subtotal + cartList[i]['price']*cartList[i]['qty']).toInt();
     }
     total = (subtotal+deliveryfee-dicount).toInt();
@@ -153,8 +153,8 @@ class _CartScreenState extends State<CartScreen> {
                                       });
                                     }
                                     setState(() {
-                                      cartList[index]['qty'] = 1;
-                                    cartList.removeAt(index);
+                                      // cartList[index]['qty'] = 1;
+                                      cartList.removeAt(index);
                                     });
 
                                   },
@@ -182,7 +182,7 @@ class _CartScreenState extends State<CartScreen> {
                                               subtotal=(subtotal-cartList[index]['price']).toInt();
                                               total = (subtotal-deliveryfee-dicount).toInt();
                                             }
-                                            total = (subtotal+deliveryfee-dicount).toInt();
+                                            // total = (subtotal+deliveryfee-dicount).toInt();
                                           });
 
                                         },
@@ -419,3 +419,10 @@ int qty = 0;
 //   alignment: Alignment.center,
 //   child: Text('Total : Rs. ${total}',style: TextStyle(color: Colors.white,fontSize: 25),),
 // ),
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
